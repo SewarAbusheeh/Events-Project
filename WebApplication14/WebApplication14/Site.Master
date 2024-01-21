@@ -1,0 +1,163 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebApplication14.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+   	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>  
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="description" content="">
+  
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+   <%-- <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />--%>
+    <title>Evento</title>
+	
+
+		<!--== CSS Files ==-->
+		<link href="~/StaticFiles/css/bootstrap.css" rel="stylesheet" media="screen">
+		<link href="~/StaticFiles/css/style.css" rel="stylesheet" media="screen">
+		<link href="~/StaticFiles/css/font-awesome.css" rel="stylesheet" media="screen">
+		<link href="~/StaticFiles/css/owl.carousel.css" rel="stylesheet" media="screen">
+		<link href="~/StaticFiles/css/flexslider.css" rel="stylesheet" media="screen">
+		<link href="~/StaticFiles/css/fancySelect.css" rel="stylesheet" media="screen">
+		<link href="~/StaticFiles/css/responsive.css" rel="stylesheet" media="screen">
+  
+
+		<!--== Google Fonts ==-->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Belgrano' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+             <%--   <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />--%>
+              <%--  <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+               <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />--%>
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+
+             <div id="menu" class="header-menu fixed">
+				<div class="box">
+					<div class="row">
+						<nav role="navigation" class="col-sm-12">
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+									<span class="sr-only">Toggle navigation</span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
+
+								<!--== Logo ==-->
+								<span class="navbar-brand logo">
+									Evento
+								</span>
+
+							</div>
+							<div class="navbar-collapse collapse">
+
+								<!--== Navigation Menu ==-->
+								<ul class="nav navbar-nav">
+									<%--<li class="current"><a href="~/Default">Home</a></li>--%>
+						
+									<%--<li><a href="#contact">Contact</a></li> --%>
+									  <li><a runat="server" href="~/Account/Reg">Register</a></li>
+                        <li><a runat="server" href="~/Account/Login">Login</a></li>
+                     
+                        <li><a runat="server" href="~/Providerdisplay">Providers</a></li>
+                        <li><a runat="server" href="~/UserDisplay">Users</a></li>
+                        <li><a runat="server" href="~/Events">Events</a></li>
+
+                        <%--  <li><a runat="server" href="~/SubscribeDisplay">Subscribers</a></li>--%>
+									 <li><a runat="server" href="~/EventdisplayToUser">EventsU</a></li>
+									<%--<li> <a runat="server" href="~/EventdisplayToUser"> <%= HttpContext.Current.Session["Email"]%>  </li></a> --%>
+									<li class="dropdown">
+                                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <img src="http://placehold.it/18x18" class="profile-image img-circle"> <%= HttpContext.Current.Session["Email"]%> <b class="caret"></b></a>
+                                   
+
+                                    </li>
+								</ul>
+							</div>
+						</nav>
+					</div>
+				</div>
+			</div>
+            
+  
+        <div class="container body-content" style="margin-bottom:200px;">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+
+            </asp:ContentPlaceHolder>
+          
+            <footer>
+                
+            </footer>
+        </div>
+
+    </form>
+    <%--	<footer style=">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p class="copyright">© Copyright 2023 <a >DEV</a></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="designed">Designed and Developed by <a  >PPCH</a></p>
+                    </div>
+                </div>
+            </div>
+        </footer>--%>
+
+
+		<!--== Javascript Files ==-->
+		<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+		<script src="~/StaticFiles/js/jquery-2.1.0.min.js"></script>
+		<script src="~/StaticFiles/js/bootstrap.min.js"></script>
+		<script src="~/StaticFiles/js/jquery.scrollTo.js"></script>
+		<script src="~/StaticFiles/js/jquery.nav.js"></script>
+		<script src="~/StaticFiles/js/jquery.flexslider.js"></script>
+		<script src="~/StaticFiles/js/jquery.accordion.js"></script>
+		<script src="~/StaticFiles/js/jquery.placeholder.js"></script>
+		<script src="~/StaticFiles/js/jquery.fitvids.js"></script>
+		<script src="~/StaticFiles/js/gmap3.js"></script>
+		<script src="~/StaticFiles/js/fancySelect.js"></script>
+		<script src="~/StaticFiles/js/owl.carousel.min.js"></script>
+		<script src="~/StaticFiles/js/main.js"></script>
+		<script type="text/javascript"> 
+
+		$(document).ready(function() {
+ 
+		  $("#testimonial-container").owlCarousel({
+		 
+		      navigation : false, // Show next and prev buttons
+		      slideSpeed : 700,
+		      paginationSpeed : 400,
+		      singleItem:true,
+		  });
+ 
+		});
+		</script>
+</body>
+</html>

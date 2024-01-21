@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0aae6164-5dca-4824-b574-e1c7879815f1" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:61077/FirstWCFService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="FirstWCFService.wsdl" MetadataType="Wsdl" ID="f806616f-c8dd-454f-8d5a-913874b89270" SourceId="1" SourceUrl="http://localhost:61077/FirstWCFService.svc?wsdl" />
+    <MetadataFile FileName="FirstWCFService.xsd" MetadataType="Schema" ID="06a1ae6d-049b-4df7-abec-ffea38c4c63a" SourceId="1" SourceUrl="http://localhost:61077/FirstWCFService.svc?xsd=xsd0" />
+    <MetadataFile FileName="FirstWCFService1.xsd" MetadataType="Schema" ID="7d7ff586-3d2d-49f7-b6bc-0437246a09d7" SourceId="1" SourceUrl="http://localhost:61077/FirstWCFService.svc?xsd=xsd2" />
+    <MetadataFile FileName="FirstWCFService.disco" MetadataType="Disco" ID="3dcd65da-db7b-4b42-bde4-db776a193196" SourceId="1" SourceUrl="http://localhost:61077/FirstWCFService.svc?disco" />
+    <MetadataFile FileName="FirstWCFService2.xsd" MetadataType="Schema" ID="5fd8697f-16c1-493d-98f1-0e798d13cae6" SourceId="1" SourceUrl="http://localhost:61077/FirstWCFService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

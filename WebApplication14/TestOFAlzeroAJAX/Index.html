@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>AJAX</title>
+    <style>
+        body {
+            background: center;
+        }
+
+        button {
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+    <script>
+        function getRe() {
+
+
+            var MyReq = new XMLHttpRequest(); // XMLHttpRequest: object exchange the data with the server behind the scnce
+            MyReq.onreadystatechange = function () { //on ready state change :func called when Ready State change
+                console.log(this.readyState);
+                console.log(this.status);
+                /*
+                  readyState : the Status of the request
+                  [0] Request not Innitialized
+                  [1] Server Connection Established  الاتصال بالسرفر تم 
+                  [2] Request Recieved 
+                  [3] Proccing Request 
+                  [4] Request is Finished  and response id ready 
+                  status : The response  status code 
+                */
+                
+                if (this.readyState == 4 && this.status === 200) {
+                    console.log(this.responseText);
+                }
+                
+            };
+            // XMLHttpRequest .Open (Methode ,URL to get the Data from ,IAsync the defualt true)  I stopped in 1:12 part 2 Alzero  
+            MyReq.open('GET', 'sewar.txt', true);
+            MyReq.send();
+        }
+    </script>
+</head>
+<body>
+    <button id="btn" onclick="getRe()">
+        get...
+    </button>
+</body>
+
+</html>

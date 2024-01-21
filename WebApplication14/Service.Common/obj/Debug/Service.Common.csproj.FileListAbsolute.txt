@@ -1,0 +1,6 @@
+C:\Users\hp\source\repos\WebApplication14\Service.Common\bin\Debug\Service.Common.dll
+C:\Users\hp\source\repos\WebApplication14\Service.Common\bin\Debug\Service.Common.pdb
+C:\Users\hp\source\repos\WebApplication14\Service.Common\obj\Debug\Service.Common.csproj.CoreCompileInputs.cache
+C:\Users\hp\source\repos\WebApplication14\Service.Common\obj\Debug\Service.Common.dll
+C:\Users\hp\source\repos\WebApplication14\Service.Common\obj\Debug\Service.Common.pdb
+C:\Users\hp\source\repos\WebApplication14\Service.Common\obj\Debug\Service.Common.csproj.AssemblyReference.cache

@@ -1,0 +1,1800 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{12814782-D1DC-4BC4-B8D4-F7D874B67D31}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApplication14</RootNamespace>
+    <AssemblyName>WebApplication14</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44324</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.4.1\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.4.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Account\css\bootstrap.min.css" />
+    <Content Include="Account\css\fontawesome-all.min.css" />
+    <Content Include="Account\css\iofrm-style.css" />
+    <Content Include="Account\css\iofrm-theme1.css" />
+    <Content Include="Account\css\iofrm-theme10.css" />
+    <Content Include="Account\css\iofrm-theme11.css" />
+    <Content Include="Account\css\iofrm-theme12.css" />
+    <Content Include="Account\css\iofrm-theme13.css" />
+    <Content Include="Account\css\iofrm-theme14.css" />
+    <Content Include="Account\css\iofrm-theme15.css" />
+    <Content Include="Account\css\iofrm-theme16.css" />
+    <Content Include="Account\css\iofrm-theme17.css" />
+    <Content Include="Account\css\iofrm-theme18.css" />
+    <Content Include="Account\css\iofrm-theme19.css" />
+    <Content Include="Account\css\iofrm-theme2.css" />
+    <Content Include="Account\css\iofrm-theme20.css" />
+    <Content Include="Account\css\iofrm-theme21.css" />
+    <Content Include="Account\css\iofrm-theme22.css" />
+    <Content Include="Account\css\iofrm-theme23.css" />
+    <Content Include="Account\css\iofrm-theme24.css" />
+    <Content Include="Account\css\iofrm-theme25.css" />
+    <Content Include="Account\css\iofrm-theme26.css" />
+    <Content Include="Account\css\iofrm-theme27.css" />
+    <Content Include="Account\css\iofrm-theme28.css" />
+    <Content Include="Account\css\iofrm-theme29.css" />
+    <Content Include="Account\css\iofrm-theme3.css" />
+    <Content Include="Account\css\iofrm-theme4.css" />
+    <Content Include="Account\css\iofrm-theme5.css" />
+    <Content Include="Account\css\iofrm-theme6.css" />
+    <Content Include="Account\css\iofrm-theme7.css" />
+    <Content Include="Account\css\iofrm-theme8.css" />
+    <Content Include="Account\css\iofrm-theme9.css" />
+    <Content Include="Account\images\graphic1.svg" />
+    <Content Include="Account\images\graphic2.svg" />
+    <Content Include="Account\images\graphic3.svg" />
+    <Content Include="Account\images\graphic4.svg" />
+    <Content Include="Account\images\graphic5.svg" />
+    <Content Include="Account\images\graphic6.svg" />
+    <Content Include="Account\images\graphic7.svg" />
+    <Content Include="Account\images\graphic8.svg" />
+    <Content Include="Account\images\icon1.svg" />
+    <Content Include="Account\images\img1.jpg" />
+    <Content Include="Account\images\img2.jpg" />
+    <Content Include="Account\images\img3.png" />
+    <Content Include="Account\images\img4.svg" />
+    <Content Include="Account\images\logo-dark.svg" />
+    <Content Include="Account\images\logo-dark2.svg" />
+    <Content Include="Account\images\logo-light.svg" />
+    <Content Include="Account\img\form1.jpg" />
+    <Content Include="Account\img\form10.jpg" />
+    <Content Include="Account\img\form11.jpg" />
+    <Content Include="Account\img\form12.jpg" />
+    <Content Include="Account\img\form13.jpg" />
+    <Content Include="Account\img\form14.jpg" />
+    <Content Include="Account\img\form15-p.jpg" />
+    <Content Include="Account\img\form15.jpg" />
+    <Content Include="Account\img\form16.jpg" />
+    <Content Include="Account\img\form17.jpg" />
+    <Content Include="Account\img\form18.jpg" />
+    <Content Include="Account\img\form19.jpg" />
+    <Content Include="Account\img\form2.jpg" />
+    <Content Include="Account\img\form20.jpg" />
+    <Content Include="Account\img\form21.jpg" />
+    <Content Include="Account\img\form22.jpg" />
+    <Content Include="Account\img\form23.jpg" />
+    <Content Include="Account\img\form24.jpg" />
+    <Content Include="Account\img\form25.jpg" />
+    <Content Include="Account\img\form26.jpg" />
+    <Content Include="Account\img\form27.jpg" />
+    <Content Include="Account\img\form28.jpg" />
+    <Content Include="Account\img\form29.jpg" />
+    <Content Include="Account\img\form3.jpg" />
+    <Content Include="Account\img\form4.jpg" />
+    <Content Include="Account\img\form5.jpg" />
+    <Content Include="Account\img\form6.jpg" />
+    <Content Include="Account\img\form7.jpg" />
+    <Content Include="Account\img\form8.jpg" />
+    <Content Include="Account\img\form9.jpg" />
+    <Content Include="Account\js\bootstrap.min.js" />
+    <Content Include="Account\js\cleave.min.js" />
+    <Content Include="Account\js\jquery.min.js" />
+    <Content Include="Account\js\main.js" />
+    <Content Include="Account\js\popper.min.js" />
+    <Content Include="Account\LoginUser.aspx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="Account\register3.html" />
+    <Content Include="Account\webfonts\fa-brands-400.svg" />
+    <Content Include="Account\webfonts\fa-regular-400.svg" />
+    <Content Include="Account\webfonts\fa-solid-900.svg" />
+    <None Include="Connected Services\FirstWcfServiceReference1\FirstWCFService.disco" />
+    <None Include="Connected Services\FirstWcfServiceReference1\configuration91.svcinfo" />
+    <None Include="Connected Services\FirstWcfServiceReference1\configuration.svcinfo" />
+    <None Include="Connected Services\FirstWcfServiceReference1\FirstWCFService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\FirstWcfServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ServiceReference1\FirstWCFService.disco" />
+    <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ServiceReference2\FirstWCFService.disco" />
+    <None Include="Connected Services\ServiceReference2\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceReference2\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceReference2\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Connected Services\ServiceReference3\WebApplication14.ServiceReference3.GetUserBYIDXMLResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference3\WebApplication14.ServiceReference3.GetUsersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference3\WebApplication14.ServiceReference3.HelloWorldResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference3\WebApplication14.ServiceReference3.UserDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ServiceReference3\WebService1.disco" />
+    <None Include="Connected Services\ServiceReference3\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceReference3\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceReference3\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Contact.aspx" />
+    <Content Include="Contactcostomer.aspx" />
+    <Content Include="Dashboard\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Dashboard\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Dashboard\bootstrap\css\bootstrap.css" />
+    <Content Include="Dashboard\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Dashboard\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Dashboard\bootstrap\js\bootstrap.js" />
+    <Content Include="Dashboard\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Dashboard\css\buttons.css" />
+    <Content Include="Dashboard\css\calendar.css" />
+    <Content Include="Dashboard\css\forms.css" />
+    <Content Include="Dashboard\css\stats.css" />
+    <Content Include="Dashboard\css\styles.css" />
+    <Content Include="Dashboard\Dashboard.aspx" />
+    <Content Include="Dashboard\images\facebook.png" />
+    <Content Include="Dashboard\js\calendar.js" />
+    <Content Include="Dashboard\js\custom.js" />
+    <Content Include="Dashboard\js\editors.js" />
+    <Content Include="Dashboard\js\forms.js" />
+    <Content Include="Dashboard\js\stats.js" />
+    <Content Include="Dashboard\js\tables.js" />
+    <Content Include="Dashboard\vendors\address\address.css" />
+    <Content Include="Dashboard\vendors\address\address.js" />
+    <Content Include="Dashboard\vendors\bootstrap-datetimepicker\bootstrap-datetimepicker.js" />
+    <Content Include="Dashboard\vendors\bootstrap-datetimepicker\datetimepicker.css" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\dist\bootstrap-wysihtml5-0.0.2.css" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\dist\bootstrap-wysihtml5-0.0.2.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\dist\bootstrap-wysihtml5-0.0.2.min.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\index.html" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\lib\css\bootstrap-responsive.css" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\lib\css\bootstrap-responsive.min.css" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\lib\css\bootstrap.css" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\lib\css\bootstrap.min.css" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\lib\css\prettify.css" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\lib\css\wysiwyg-color.css" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\lib\img\glyphicons-halflings-white.png" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\lib\img\glyphicons-halflings.png" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\lib\js\bootstrap-button.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\lib\js\bootstrap.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\lib\js\bootstrap.min.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\lib\js\jquery-1.7.2.min.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\lib\js\prettify.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\lib\js\wysihtml5-0.3.0.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\lib\js\wysihtml5-0.3.0.min.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\src\bootstrap-wysihtml5.css" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\src\bootstrap-wysihtml5.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\src\locales\bootstrap-wysihtml5.ar-AR.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\src\locales\bootstrap-wysihtml5.bg-BG.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\src\locales\bootstrap-wysihtml5.ca-CT.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\src\locales\bootstrap-wysihtml5.cs-CZ.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\src\locales\bootstrap-wysihtml5.da-DK.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\src\locales\bootstrap-wysihtml5.de-DE.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\src\locales\bootstrap-wysihtml5.el-GR.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\src\locales\bootstrap-wysihtml5.es-AR.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\src\locales\bootstrap-wysihtml5.es-ES.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\src\locales\bootstrap-wysihtml5.fr-FR.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\src\locales\bootstrap-wysihtml5.hr-HR.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\src\locales\bootstrap-wysihtml5.it-IT.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\src\locales\bootstrap-wysihtml5.ja-JP.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\src\locales\bootstrap-wysihtml5.ko-KR.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\src\locales\bootstrap-wysihtml5.lt-LT.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\src\locales\bootstrap-wysihtml5.mo-MD.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\src\locales\bootstrap-wysihtml5.nb-NB.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\src\locales\bootstrap-wysihtml5.nl-NL.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\src\locales\bootstrap-wysihtml5.pl-PL.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\src\locales\bootstrap-wysihtml5.pt-BR.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\src\locales\bootstrap-wysihtml5.ru-RU.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\src\locales\bootstrap-wysihtml5.sk-SK.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\src\locales\bootstrap-wysihtml5.sv-SE.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\src\locales\bootstrap-wysihtml5.tr-TR.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\src\locales\bootstrap-wysihtml5.ua-UA.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\src\locales\bootstrap-wysihtml5.zh-CN.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\src\locales\bootstrap-wysihtml5.zh-TW.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\src\wysiwyg-color.css" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\test\bootstrap_wysihtml5\parserRules_test.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\test\browser_test.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\test\editor_test.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\test\incompatible_test.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\test\index.html" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\test\support\html_equal.js" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\test\undo_manager_test.js" />
+    <Content Include="Dashboard\vendors\ckeditor\adapters\jquery.js" />
+    <Content Include="Dashboard\vendors\ckeditor\build-config.js" />
+    <Content Include="Dashboard\vendors\ckeditor\ckeditor.js" />
+    <Content Include="Dashboard\vendors\ckeditor\config.js" />
+    <Content Include="Dashboard\vendors\ckeditor\contents.css" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\af.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\ar.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\bg.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\bn.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\bs.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\ca.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\cs.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\cy.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\da.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\de.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\el.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\en-au.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\en-ca.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\en-gb.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\en.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\eo.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\es.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\et.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\eu.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\fa.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\fi.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\fo.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\fr-ca.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\fr.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\gl.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\gu.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\he.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\hi.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\hr.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\hu.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\id.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\is.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\it.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\ja.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\ka.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\km.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\ko.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\ku.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\lt.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\lv.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\mk.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\mn.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\ms.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\nb.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\nl.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\no.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\pl.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\pt-br.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\pt.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\ro.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\ru.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\si.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\sk.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\sl.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\sq.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\sr-latn.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\sr.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\sv.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\th.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\tr.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\ug.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\uk.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\vi.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\zh-cn.js" />
+    <Content Include="Dashboard\vendors\ckeditor\lang\zh.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\ar.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\bg.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\ca.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\cs.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\cy.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\da.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\de.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\el.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\en.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\eo.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\es.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\et.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\fa.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\fi.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\fr-ca.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\fr.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\gl.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\gu.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\he.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\hi.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\hr.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\hu.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\id.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\it.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\ja.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\km.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\ku.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\lt.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\lv.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\mk.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\mn.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\nb.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\nl.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\no.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\pl.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\pt-br.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\pt.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\ro.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\ru.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\si.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\sk.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\sl.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\sq.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\sr-latn.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\sr.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\sv.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\th.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\tr.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\ug.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\uk.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\vi.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\colordialog\dialogs\colordialog.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\div\dialogs\div.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\fakeobjects\images\spacer.gif" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\find\dialogs\find.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\flash\dialogs\flash.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\flash\images\placeholder.png" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\forms\dialogs\button.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\forms\dialogs\checkbox.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\forms\dialogs\form.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\forms\dialogs\hiddenfield.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\forms\dialogs\radio.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\forms\dialogs\select.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\forms\dialogs\textarea.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\forms\dialogs\textfield.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\forms\images\hiddenfield.gif" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\icons.png" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\icons_hidpi.png" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\iframe\dialogs\iframe.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\iframe\images\placeholder.png" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\image\dialogs\image.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\image\images\noimage.png" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\link\images\anchor.png" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\link\images\hidpi\anchor.png" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\liststyle\dialogs\liststyle.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\magicline\images\hidpi\icon.png" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\magicline\images\icon.png" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\pagebreak\images\pagebreak.gif" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\preview\preview.html" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\showblocks\images\block_address.png" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\showblocks\images\block_blockquote.png" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\showblocks\images\block_div.png" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\showblocks\images\block_h1.png" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\showblocks\images\block_h2.png" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\showblocks\images\block_h3.png" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\showblocks\images\block_h4.png" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\showblocks\images\block_h5.png" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\showblocks\images\block_h6.png" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\showblocks\images\block_p.png" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\showblocks\images\block_pre.png" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\smiley\dialogs\smiley.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\smiley\images\angel_smile.gif" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\smiley\images\angry_smile.gif" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\smiley\images\broken_heart.gif" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\smiley\images\confused_smile.gif" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\smiley\images\cry_smile.gif" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\smiley\images\devil_smile.gif" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\smiley\images\embaressed_smile.gif" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\smiley\images\embarrassed_smile.gif" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\smiley\images\envelope.gif" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\smiley\images\heart.gif" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\smiley\images\kiss.gif" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\smiley\images\lightbulb.gif" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\smiley\images\omg_smile.gif" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\smiley\images\regular_smile.gif" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\smiley\images\sad_smile.gif" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\smiley\images\shades_smile.gif" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\smiley\images\teeth_smile.gif" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\smiley\images\thumbs_down.gif" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\smiley\images\thumbs_up.gif" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\smiley\images\tongue_smile.gif" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\smiley\images\tounge_smile.gif" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\smiley\images\whatchutalkingabout_smile.gif" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\smiley\images\wink_smile.gif" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\ar.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\bg.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\ca.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\cs.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\cy.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\de.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\el.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\en.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\eo.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\es.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\et.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\fa.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\fi.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\fr-ca.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\fr.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\gl.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\he.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\hr.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\hu.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\id.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\it.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\ja.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\ku.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\lv.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\nb.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\nl.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\no.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\pl.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\pt-br.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\pt.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\ru.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\si.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\sk.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\sl.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\sq.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\sv.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\th.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\tr.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\ug.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\uk.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\vi.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\zh-cn.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\templates\dialogs\templates.css" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\templates\dialogs\templates.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\templates\templates\default.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\templates\templates\images\template1.gif" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\templates\templates\images\template2.gif" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\templates\templates\images\template3.gif" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\wsc\dialogs\tmp.html" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\wsc\dialogs\wsc_ie.js" />
+    <Content Include="Dashboard\vendors\ckeditor\samples\ajax.html" />
+    <Content Include="Dashboard\vendors\ckeditor\samples\api.html" />
+    <Content Include="Dashboard\vendors\ckeditor\samples\appendto.html" />
+    <Content Include="Dashboard\vendors\ckeditor\samples\assets\inlineall\logo.png" />
+    <Content Include="Dashboard\vendors\ckeditor\samples\assets\outputxhtml\outputxhtml.css" />
+    <Content Include="Dashboard\vendors\ckeditor\samples\assets\posteddata.php" />
+    <Content Include="Dashboard\vendors\ckeditor\samples\assets\sample.css" />
+    <Content Include="Dashboard\vendors\ckeditor\samples\assets\sample.jpg" />
+    <Content Include="Dashboard\vendors\ckeditor\samples\assets\uilanguages\languages.js" />
+    <Content Include="Dashboard\vendors\ckeditor\samples\datafiltering.html" />
+    <Content Include="Dashboard\vendors\ckeditor\samples\divreplace.html" />
+    <Content Include="Dashboard\vendors\ckeditor\samples\index.html" />
+    <Content Include="Dashboard\vendors\ckeditor\samples\inlineall.html" />
+    <Content Include="Dashboard\vendors\ckeditor\samples\inlinebycode.html" />
+    <Content Include="Dashboard\vendors\ckeditor\samples\inlinetextarea.html" />
+    <Content Include="Dashboard\vendors\ckeditor\samples\jquery.html" />
+    <Content Include="Dashboard\vendors\ckeditor\samples\plugins\dialog\assets\my_dialog.js" />
+    <Content Include="Dashboard\vendors\ckeditor\samples\plugins\dialog\dialog.html" />
+    <Content Include="Dashboard\vendors\ckeditor\samples\plugins\enterkey\enterkey.html" />
+    <Content Include="Dashboard\vendors\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\outputforflash.swf" />
+    <Content Include="Dashboard\vendors\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\swfobject.js" />
+    <Content Include="Dashboard\vendors\ckeditor\samples\plugins\htmlwriter\outputforflash.html" />
+    <Content Include="Dashboard\vendors\ckeditor\samples\plugins\htmlwriter\outputhtml.html" />
+    <Content Include="Dashboard\vendors\ckeditor\samples\plugins\magicline\magicline.html" />
+    <Content Include="Dashboard\vendors\ckeditor\samples\plugins\toolbar\toolbar.html" />
+    <Content Include="Dashboard\vendors\ckeditor\samples\plugins\wysiwygarea\fullpage.html" />
+    <Content Include="Dashboard\vendors\ckeditor\samples\readonly.html" />
+    <Content Include="Dashboard\vendors\ckeditor\samples\replacebyclass.html" />
+    <Content Include="Dashboard\vendors\ckeditor\samples\replacebycode.html" />
+    <Content Include="Dashboard\vendors\ckeditor\samples\sample.css" />
+    <Content Include="Dashboard\vendors\ckeditor\samples\sample.js" />
+    <Content Include="Dashboard\vendors\ckeditor\samples\sample_posteddata.php" />
+    <Content Include="Dashboard\vendors\ckeditor\samples\tabindex.html" />
+    <Content Include="Dashboard\vendors\ckeditor\samples\uicolor.html" />
+    <Content Include="Dashboard\vendors\ckeditor\samples\uilanguages.html" />
+    <Content Include="Dashboard\vendors\ckeditor\samples\xhtmlstyle.html" />
+    <Content Include="Dashboard\vendors\ckeditor\skins\moono\dialog.css" />
+    <Content Include="Dashboard\vendors\ckeditor\skins\moono\dialog_ie.css" />
+    <Content Include="Dashboard\vendors\ckeditor\skins\moono\dialog_ie7.css" />
+    <Content Include="Dashboard\vendors\ckeditor\skins\moono\dialog_ie8.css" />
+    <Content Include="Dashboard\vendors\ckeditor\skins\moono\dialog_iequirks.css" />
+    <Content Include="Dashboard\vendors\ckeditor\skins\moono\dialog_opera.css" />
+    <Content Include="Dashboard\vendors\ckeditor\skins\moono\editor.css" />
+    <Content Include="Dashboard\vendors\ckeditor\skins\moono\editor_gecko.css" />
+    <Content Include="Dashboard\vendors\ckeditor\skins\moono\editor_ie.css" />
+    <Content Include="Dashboard\vendors\ckeditor\skins\moono\editor_ie7.css" />
+    <Content Include="Dashboard\vendors\ckeditor\skins\moono\editor_ie8.css" />
+    <Content Include="Dashboard\vendors\ckeditor\skins\moono\editor_iequirks.css" />
+    <Content Include="Dashboard\vendors\ckeditor\skins\moono\icons.png" />
+    <Content Include="Dashboard\vendors\ckeditor\skins\moono\icons_hidpi.png" />
+    <Content Include="Dashboard\vendors\ckeditor\skins\moono\images\arrow.png" />
+    <Content Include="Dashboard\vendors\ckeditor\skins\moono\images\close.png" />
+    <Content Include="Dashboard\vendors\ckeditor\skins\moono\images\hidpi\close.png" />
+    <Content Include="Dashboard\vendors\ckeditor\skins\moono\images\hidpi\lock-open.png" />
+    <Content Include="Dashboard\vendors\ckeditor\skins\moono\images\hidpi\lock.png" />
+    <Content Include="Dashboard\vendors\ckeditor\skins\moono\images\hidpi\refresh.png" />
+    <Content Include="Dashboard\vendors\ckeditor\skins\moono\images\lock-open.png" />
+    <Content Include="Dashboard\vendors\ckeditor\skins\moono\images\lock.png" />
+    <Content Include="Dashboard\vendors\ckeditor\skins\moono\images\refresh.png" />
+    <Content Include="Dashboard\vendors\ckeditor\styles.js" />
+    <Content Include="Dashboard\vendors\datatables\css\demo_page.css" />
+    <Content Include="Dashboard\vendors\datatables\css\demo_table.css" />
+    <Content Include="Dashboard\vendors\datatables\css\demo_table_jui.css" />
+    <Content Include="Dashboard\vendors\datatables\css\jquery.dataTables.css" />
+    <Content Include="Dashboard\vendors\datatables\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Dashboard\vendors\datatables\dataTables.bootstrap.css" />
+    <Content Include="Dashboard\vendors\datatables\dataTables.bootstrap.js" />
+    <Content Include="Dashboard\vendors\datatables\images\back_disabled.png" />
+    <Content Include="Dashboard\vendors\datatables\images\back_enabled.png" />
+    <Content Include="Dashboard\vendors\datatables\images\back_enabled_hover.png" />
+    <Content Include="Dashboard\vendors\datatables\images\favicon.ico" />
+    <Content Include="Dashboard\vendors\datatables\images\forward_disabled.png" />
+    <Content Include="Dashboard\vendors\datatables\images\forward_enabled.png" />
+    <Content Include="Dashboard\vendors\datatables\images\forward_enabled_hover.png" />
+    <Content Include="Dashboard\vendors\datatables\images\sort_asc.png" />
+    <Content Include="Dashboard\vendors\datatables\images\sort_asc_disabled.png" />
+    <Content Include="Dashboard\vendors\datatables\images\sort_both.png" />
+    <Content Include="Dashboard\vendors\datatables\images\sort_desc.png" />
+    <Content Include="Dashboard\vendors\datatables\images\sort_desc_disabled.png" />
+    <Content Include="Dashboard\vendors\datatables\js\jquery.dataTables.js" />
+    <Content Include="Dashboard\vendors\datatables\js\jquery.dataTables.min.js" />
+    <Content Include="Dashboard\vendors\datatables\js\jquery.js" />
+    <Content Include="Dashboard\vendors\datatables\src\api\api.internal.js" />
+    <Content Include="Dashboard\vendors\datatables\src\api\api.methods.js" />
+    <Content Include="Dashboard\vendors\datatables\src\api\api.static.js" />
+    <Content Include="Dashboard\vendors\datatables\src\core\core.ajax.js" />
+    <Content Include="Dashboard\vendors\datatables\src\core\core.columns.js" />
+    <Content Include="Dashboard\vendors\datatables\src\core\core.constructor.js" />
+    <Content Include="Dashboard\vendors\datatables\src\core\core.data.js" />
+    <Content Include="Dashboard\vendors\datatables\src\core\core.draw.js" />
+    <Content Include="Dashboard\vendors\datatables\src\core\core.filter.js" />
+    <Content Include="Dashboard\vendors\datatables\src\core\core.info.js" />
+    <Content Include="Dashboard\vendors\datatables\src\core\core.init.js" />
+    <Content Include="Dashboard\vendors\datatables\src\core\core.length.js" />
+    <Content Include="Dashboard\vendors\datatables\src\core\core.page.js" />
+    <Content Include="Dashboard\vendors\datatables\src\core\core.processing.js" />
+    <Content Include="Dashboard\vendors\datatables\src\core\core.scrolling.js" />
+    <Content Include="Dashboard\vendors\datatables\src\core\core.sizing.js" />
+    <Content Include="Dashboard\vendors\datatables\src\core\core.sort.js" />
+    <Content Include="Dashboard\vendors\datatables\src\core\core.state.js" />
+    <Content Include="Dashboard\vendors\datatables\src\core\core.support.js" />
+    <Content Include="Dashboard\vendors\datatables\src\DataTables.js" />
+    <Content Include="Dashboard\vendors\datatables\src\ext\ext.classes.js" />
+    <Content Include="Dashboard\vendors\datatables\src\ext\ext.paging.js" />
+    <Content Include="Dashboard\vendors\datatables\src\ext\ext.sorting.js" />
+    <Content Include="Dashboard\vendors\datatables\src\ext\ext.types.js" />
+    <Content Include="Dashboard\vendors\datatables\src\model\model.column.js" />
+    <Content Include="Dashboard\vendors\datatables\src\model\model.defaults.columns.js" />
+    <Content Include="Dashboard\vendors\datatables\src\model\model.defaults.js" />
+    <Content Include="Dashboard\vendors\datatables\src\model\model.ext.js" />
+    <Content Include="Dashboard\vendors\datatables\src\model\model.row.js" />
+    <Content Include="Dashboard\vendors\datatables\src\model\model.search.js" />
+    <Content Include="Dashboard\vendors\datatables\src\model\model.settings.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\controller.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\controller.php" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\index.html" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\performance\draw.html" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\performance\large.php" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\performance\page.html" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\performance\sort.html" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\templates\-complex_header.php" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\templates\2512.php" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\templates\6776.php" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\templates\complex_header_2.php" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\templates\deferred_table.php" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\templates\dom_data.php" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\templates\dom_data_th.php" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\templates\dom_data_two_headers.php" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\templates\dymanic_table.php" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\templates\empty_table.php" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\templates\html_table.php" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\templates\js_data.php" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\templates\js_data_mixed_types.php" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\templates\two_tables.php" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests\1_dom\_zero_config.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\-complex_header.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\-iDraw.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\2512.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\2530-2.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\2530.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\2569.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\2600.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\2608.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\2635.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\2746-stable-sort.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\2799.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\2840-restore-table-width.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\2914-state-save-sort.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\5396-fnUpdate-arrays-mData.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\5396-fnUpdate-arrays.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\5508-xscroll-zero-content.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\6776-scrolling-table-grows.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\aaSorting.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\aaSortingFixed.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\aoColumns.bSearchable.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\aoColumns.bSortable.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\aoColumns.bUseRendered.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\aoColumns.bVisible.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\aoColumns.bVisible2.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\aoColumns.fnRender.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\aoColumns.iDataSort.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\aoColumns.sClass.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\aoColumns.sName.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\aoColumns.sTitle.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\aoColumns.sWidth.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\aoSearchCols.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\asStripClasses.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\bAutoWidth.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\bFilter.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\bInfiniteScroll.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\bInfo.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\bJQueryUI.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\bLengthChange.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\bPaginate.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\bProcessing.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\bServerSide.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\bSort.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\bSortCellsTop.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\bSortClasses.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\fnCookieCallback.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\fnCreatedCell.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\fnCreatedRow.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\fnDeleteRow.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\fnDrawCallback.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\fnFilter.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\fnFooterCallback.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\fnHeaderCallback.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\fnInfoCallback.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\fnInitComplete.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\fnRowCallback.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\fnSetColumnVis.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\fnSetColumnVis2.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\html-autodetect-sort.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\iDisplayLength.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\oLanguage.oPaginate.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\oLanguage.sInfo.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\oLanguage.sInfoEmpty.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\oLanguage.sInfoPostFix.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\oLanguage.sLengthMenu.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\oLanguage.sProcessing.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\oLanguage.sSearch.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\oLanguage.sUrl.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\oLanguage.sZeroRecords.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\oSearch.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\sAjaxSource.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\sDom.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\sPaginationType.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\sScrollXY.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\th_in_body.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\_getDataFunctions.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\_setDataFunctions.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\1_dom\_zero_config.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\39-nested-null.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\6872-default-content-missing-props.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\8549--string-sorting-nonstrings.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\aaSorting.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\aaSortingFixed.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\aoColumns.bSearchable.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\aoColumns.bSortable.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\aoColumns.bUseRendered.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\aoColumns.bVisible.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\aoColumns.fnRender.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\aoColumns.iDataSort.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\aoColumns.sClass.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\aoColumns.sName.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\aoColumns.sTitle.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\aoColumns.sWidth.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\aoSearchCols.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\asStripClasses.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\bAutoWidth.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\bFilter.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\bInfo.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\bLengthChange.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\bPaginate.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\bProcessing.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\bServerSide.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\bSort.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\bSortClasses.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\fnCreatedCell.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\fnCreatedRow.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\fnDrawCallback.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\fnFooterCallback.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\fnHeaderCallback.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\fnInitComplete.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\fnRowCallback.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\iDisplayLength.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\js_data_mixed_types.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\oLanguage.oPaginate.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\oLanguage.sInfo.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\oLanguage.sInfoEmpty.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\oLanguage.sInfoPostFix.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\oLanguage.sLengthMenu.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\oLanguage.sProcessing.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\oLanguage.sSearch.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\oLanguage.sUrl.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\oLanguage.sZeroRecords.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\oSearch.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\sAjaxSource.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\sDom.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\sPaginationType.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\2_js\_zero_config.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\aaSorting.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\aaSortingFixed.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\aoColumns.bSearchable.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\aoColumns.bSortable.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\aoColumns.bUseRendered.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\aoColumns.bVisible.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\aoColumns.fnRender.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\aoColumns.iDataSort.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\aoColumns.sClass.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\aoColumns.sName.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\aoColumns.sTitle.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\aoColumns.sWidth.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\aoSearchCols.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\asStripClasses.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\bAutoWidth.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\bFilter.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\bInfo.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\bLengthChange.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\bPaginate.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\bProcessing.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\bServerSide.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\bSort.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\bSortClasses.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\fnCreatedCell.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\fnCreatedRow.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\fnDrawCallback.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\fnHeaderCallback.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\fnInitComplete.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\fnRowCallback.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\fnServerData.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\iDisplayLength.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\oLanguage.oPaginate.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\oLanguage.sInfo.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\oLanguage.sInfoEmpty.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\oLanguage.sInfoPostFix.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\oLanguage.sLengthMenu.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\oLanguage.sLoadingRecords.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\oLanguage.sProcessing.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\oLanguage.sSearch.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\oLanguage.sUrl.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\oLanguage.sZeroRecords.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\oSearch.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\sAjaxDataProp.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\sAjaxDataProp2.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\sAjaxSource.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\sDom.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\sPaginationType.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\3_ajax\_zero_config.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\-iDraw.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\2440.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\2569.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\2600.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\aaSorting.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\aaSortingFixed.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\aoColumns.bSearchable.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\aoColumns.bSortable.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\aoColumns.bUseRendered.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\aoColumns.bVisible.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\aoColumns.fnRender.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\aoColumns.sClass.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\aoColumns.sName.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\aoColumns.sTitle.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\aoColumns.sWidth.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\aoSearchCols.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\asStripClasses.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\bAutoWidth.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\bFilter.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\bInfiniteScroll.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\bInfo.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\bLengthChange.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\bPaginate.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\bProcessing.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\bServerSide.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\bSort.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\bSortClasses.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\fnCreatedCell.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\fnCreatedRow.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\fnDrawCallback.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\fnHeaderCallback.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\fnInitComplete.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\fnRowCallback.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\iDeferLoading.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\iDisplayLength.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\oLanguage.oPaginate.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\oLanguage.sInfo.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\oLanguage.sInfoEmpty.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\oLanguage.sInfoPostFix.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\oLanguage.sLengthMenu.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\oLanguage.sProcessing.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\oLanguage.sSearch.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\oLanguage.sUrl.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\oLanguage.sZeroRecords.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\oSearch.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\sAjaxDataProp.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\sAjaxSource.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\sDom.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\sPaginationType.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\4_server-side\_zero_config.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\aaSorting.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\aaSortingFixed.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\aoColumns.bSearchable.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\aoColumns.bSortable.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\aoColumns.bUseRendered.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\aoColumns.bVisible.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\aoColumns.fnRender.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\aoColumns.iDataSort.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\aoColumns.sClass.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\aoColumns.sName.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\aoColumns.sTitle.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\aoColumns.sWidth.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\aoSearchCols.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\asStripClasses.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\bAutoWidth.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\bFilter.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\bInfo.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\bLengthChange.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\bPaginate.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\bProcessing.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\bServerSide.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\bSort.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\bSortClasses.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\fnDrawCallback.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\fnHeaderCallback.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\fnInitComplete.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\fnRowCallback.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\fnServerData.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\iDisplayLength.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\oLanguage.oPaginate.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\oLanguage.sInfo.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\oLanguage.sInfoEmpty.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\oLanguage.sInfoPostFix.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\oLanguage.sLengthMenu.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\oLanguage.sProcessing.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\oLanguage.sSearch.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\oLanguage.sUrl.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\oLanguage.sZeroRecords.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\oSearch.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\sAjaxSource.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\sDom.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\sPaginationType.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\_zero_config.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\_zero_config_arrays_subobjects.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\_zero_config_deep.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\_zero_config_mDataProp.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\_zero_config_null_source.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\_zero_config_objects.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\5_ajax_objects\_zero_config_objects_subarrays.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\aaSorting.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\aaSortingFixed.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\aoColumns.bSearchable.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\aoColumns.bSortable.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\aoColumns.bUseRendered.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\aoColumns.bVisible.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\aoColumns.fnRender.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\aoColumns.iDataSort.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\aoColumns.sClass.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\aoColumns.sName.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\aoColumns.sTitle.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\aoColumns.sWidth.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\aoSearchCols.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\asStripClasses.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\bAutoWidth.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\bFilter.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\bInfo.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\bLengthChange.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\bPaginate.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\bProcessing.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\bServerSide.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\bSort.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\bSortClasses.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\fnDrawCallback.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\fnHeaderCallback.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\fnInitComplete.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\fnRowCallback.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\fnServerData.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\iDisplayLength.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\oLanguage.oPaginate.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\oLanguage.sInfo.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\oLanguage.sInfoEmpty.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\oLanguage.sInfoPostFix.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\oLanguage.sLengthMenu.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\oLanguage.sProcessing.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\oLanguage.sSearch.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\oLanguage.sUrl.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\oLanguage.sZeroRecords.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\oSearch.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\sAjaxDataProp.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\sAjaxDataProp2.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\sAjaxSource.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\sDom.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\sPaginationType.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\tests_onhold\6_delayed_rendering\_zero_config.js" />
+    <Content Include="Dashboard\vendors\datatables\unit_testing\unit_test.js" />
+    <Content Include="Dashboard\vendors\easypiechart\examples\excanvas.js" />
+    <Content Include="Dashboard\vendors\easypiechart\examples\index.html" />
+    <Content Include="Dashboard\vendors\easypiechart\examples\style.css" />
+    <Content Include="Dashboard\vendors\easypiechart\jquery.easy-pie-chart.css" />
+    <Content Include="Dashboard\vendors\easypiechart\jquery.easy-pie-chart.js" />
+    <Content Include="Dashboard\vendors\flot\examples\ajax\index.html" />
+    <Content Include="Dashboard\vendors\flot\examples\annotating\index.html" />
+    <Content Include="Dashboard\vendors\flot\examples\axes-interacting\index.html" />
+    <Content Include="Dashboard\vendors\flot\examples\axes-multiple\index.html" />
+    <Content Include="Dashboard\vendors\flot\examples\axes-time-zones\date.js" />
+    <Content Include="Dashboard\vendors\flot\examples\axes-time-zones\index.html" />
+    <Content Include="Dashboard\vendors\flot\examples\axes-time\index.html" />
+    <Content Include="Dashboard\vendors\flot\examples\background.png" />
+    <Content Include="Dashboard\vendors\flot\examples\basic-canvas.html" />
+    <Content Include="Dashboard\vendors\flot\examples\basic-options\index.html" />
+    <Content Include="Dashboard\vendors\flot\examples\basic-usage\index.html" />
+    <Content Include="Dashboard\vendors\flot\examples\canvas\index.html" />
+    <Content Include="Dashboard\vendors\flot\examples\categories\index.html" />
+    <Content Include="Dashboard\vendors\flot\examples\examples.css" />
+    <Content Include="Dashboard\vendors\flot\examples\image\hs-2004-27-a-large-web.jpg" />
+    <Content Include="Dashboard\vendors\flot\examples\image\index.html" />
+    <Content Include="Dashboard\vendors\flot\examples\index.html" />
+    <Content Include="Dashboard\vendors\flot\examples\interacting\index.html" />
+    <Content Include="Dashboard\vendors\flot\examples\navigate\arrow-down.gif" />
+    <Content Include="Dashboard\vendors\flot\examples\navigate\arrow-left.gif" />
+    <Content Include="Dashboard\vendors\flot\examples\navigate\arrow-right.gif" />
+    <Content Include="Dashboard\vendors\flot\examples\navigate\arrow-up.gif" />
+    <Content Include="Dashboard\vendors\flot\examples\navigate\index.html" />
+    <Content Include="Dashboard\vendors\flot\examples\percentiles\index.html" />
+    <Content Include="Dashboard\vendors\flot\examples\realtime\index.html" />
+    <Content Include="Dashboard\vendors\flot\examples\resize\index.html" />
+    <Content Include="Dashboard\vendors\flot\examples\selection\index.html" />
+    <Content Include="Dashboard\vendors\flot\examples\series-errorbars\index.html" />
+    <Content Include="Dashboard\vendors\flot\examples\series-pie\index.html" />
+    <Content Include="Dashboard\vendors\flot\examples\series-toggle\index.html" />
+    <Content Include="Dashboard\vendors\flot\examples\series-types\index.html" />
+    <Content Include="Dashboard\vendors\flot\examples\shared\jquery-ui\jquery-ui.min.css" />
+    <Content Include="Dashboard\vendors\flot\examples\stacking\index.html" />
+    <Content Include="Dashboard\vendors\flot\examples\symbols\index.html" />
+    <Content Include="Dashboard\vendors\flot\examples\threshold\index.html" />
+    <Content Include="Dashboard\vendors\flot\examples\tracking\index.html" />
+    <Content Include="Dashboard\vendors\flot\examples\visitors\index.html" />
+    <Content Include="Dashboard\vendors\flot\examples\zooming\index.html" />
+    <Content Include="Dashboard\vendors\flot\excanvas.js" />
+    <Content Include="Dashboard\vendors\flot\excanvas.min.js" />
+    <Content Include="Dashboard\vendors\flot\jquery.colorhelpers.js" />
+    <Content Include="Dashboard\vendors\flot\jquery.flot.canvas.js" />
+    <Content Include="Dashboard\vendors\flot\jquery.flot.categories.js" />
+    <Content Include="Dashboard\vendors\flot\jquery.flot.crosshair.js" />
+    <Content Include="Dashboard\vendors\flot\jquery.flot.errorbars.js" />
+    <Content Include="Dashboard\vendors\flot\jquery.flot.fillbetween.js" />
+    <Content Include="Dashboard\vendors\flot\jquery.flot.image.js" />
+    <Content Include="Dashboard\vendors\flot\jquery.flot.js" />
+    <Content Include="Dashboard\vendors\flot\jquery.flot.navigate.js" />
+    <Content Include="Dashboard\vendors\flot\jquery.flot.pie.js" />
+    <Content Include="Dashboard\vendors\flot\jquery.flot.resize.js" />
+    <Content Include="Dashboard\vendors\flot\jquery.flot.selection.js" />
+    <Content Include="Dashboard\vendors\flot\jquery.flot.stack.js" />
+    <Content Include="Dashboard\vendors\flot\jquery.flot.symbol.js" />
+    <Content Include="Dashboard\vendors\flot\jquery.flot.threshold.js" />
+    <Content Include="Dashboard\vendors\flot\jquery.flot.time.js" />
+    <Content Include="Dashboard\vendors\flot\jquery.js" />
+    <Content Include="Dashboard\vendors\flot\LICENSE.txt" />
+    <Content Include="Dashboard\vendors\form-helpers\css\bootstrap-formhelpers.css" />
+    <Content Include="Dashboard\vendors\form-helpers\css\bootstrap-formhelpers.min.css" />
+    <Content Include="Dashboard\vendors\form-helpers\img\bootstrap-formhelpers-countries.flags-LICENSE.txt" />
+    <Content Include="Dashboard\vendors\form-helpers\img\bootstrap-formhelpers-countries.flags.png" />
+    <Content Include="Dashboard\vendors\form-helpers\img\bootstrap-formhelpers-currencies.flags.png" />
+    <Content Include="Dashboard\vendors\form-helpers\img\bootstrap-formhelpers-googlefonts.png" />
+    <Content Include="Dashboard\vendors\form-helpers\js\bootstrap-formhelpers.js" />
+    <Content Include="Dashboard\vendors\form-helpers\js\bootstrap-formhelpers.min.js" />
+    <Content Include="Dashboard\vendors\fullcalendar\fullcalendar.css" />
+    <Content Include="Dashboard\vendors\fullcalendar\fullcalendar.js" />
+    <Content Include="Dashboard\vendors\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Dashboard\vendors\fullcalendar\fullcalendar.print.css" />
+    <Content Include="Dashboard\vendors\fullcalendar\gcal.js" />
+    <Content Include="Dashboard\vendors\jquery.knob.js" />
+    <Content Include="Dashboard\vendors\mask\jquery.maskedinput.min.js" />
+    <Content Include="Dashboard\vendors\moment\moment.min.js" />
+    <Content Include="Dashboard\vendors\morris\morris.css" />
+    <Content Include="Dashboard\vendors\morris\morris.js" />
+    <Content Include="Dashboard\vendors\morris\morris.min.js" />
+    <Content Include="Dashboard\vendors\raphael-min.js" />
+    <Content Include="Dashboard\vendors\select2\select2-bootstrap.css" />
+    <Content Include="Dashboard\vendors\select2\select2.css" />
+    <Content Include="Dashboard\vendors\select2\select2.js" />
+    <Content Include="Dashboard\vendors\select\bootstrap-select.css" />
+    <Content Include="Dashboard\vendors\select\bootstrap-select.js" />
+    <Content Include="Dashboard\vendors\select\bootstrap-select.min.css" />
+    <Content Include="Dashboard\vendors\select\bootstrap-select.min.js" />
+    <Content Include="Dashboard\vendors\tags\css\bootstrap-tags.css" />
+    <Content Include="Dashboard\vendors\tags\js\bootstrap-tags.js" />
+    <Content Include="Dashboard\vendors\tags\js\bootstrap-tags.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\changelog.txt" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\jquery.tinymce.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\license.txt" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\advlist\plugin.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\anchor\plugin.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\autolink\plugin.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\autoresize\plugin.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\autosave\plugin.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\bbcode\plugin.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\charmap\plugin.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\code\plugin.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\compat3x\editable_selects.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\compat3x\form_utils.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\compat3x\mctabs.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\compat3x\tiny_mce_popup.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\compat3x\validate.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\contextmenu\plugin.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\directionality\plugin.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\emoticons\img\smiley-cool.gif" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\emoticons\img\smiley-cry.gif" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\emoticons\img\smiley-embarassed.gif" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\emoticons\img\smiley-foot-in-mouth.gif" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\emoticons\img\smiley-frown.gif" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\emoticons\img\smiley-innocent.gif" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\emoticons\img\smiley-kiss.gif" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\emoticons\img\smiley-laughing.gif" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\emoticons\img\smiley-money-mouth.gif" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\emoticons\img\smiley-sealed.gif" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\emoticons\img\smiley-smile.gif" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\emoticons\img\smiley-surprised.gif" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\emoticons\img\smiley-tongue-out.gif" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\emoticons\img\smiley-undecided.gif" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\emoticons\img\smiley-wink.gif" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\emoticons\img\smiley-yell.gif" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\emoticons\plugin.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\example\plugin.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\example_dependency\plugin.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\fullpage\plugin.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\fullscreen\plugin.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\hr\plugin.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\image\plugin.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\importcss\plugin.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\insertdatetime\plugin.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\layer\plugin.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\legacyoutput\plugin.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\link\plugin.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\lists\plugin.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\media\moxieplayer.swf" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\media\plugin.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\nonbreaking\plugin.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\noneditable\plugin.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\pagebreak\plugin.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\paste\plugin.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\preview\plugin.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\print\plugin.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\save\plugin.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\searchreplace\plugin.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\spellchecker\plugin.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\tabfocus\plugin.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\table\plugin.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\template\plugin.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\textcolor\plugin.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\visualblocks\css\visualblocks.css" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\visualblocks\plugin.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\visualchars\plugin.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\plugins\wordcount\plugin.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\skins\lightgray\content.inline.min.css" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\skins\lightgray\content.min.css" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\skins\lightgray\fonts\icomoon-small.svg" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\skins\lightgray\fonts\icomoon.svg" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\skins\lightgray\img\anchor.gif" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\skins\lightgray\img\loader.gif" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\skins\lightgray\img\object.gif" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\skins\lightgray\img\trans.gif" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\skins\lightgray\img\wline.gif" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\skins\lightgray\skin.ie7.min.css" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\skins\lightgray\skin.min.css" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\themes\modern\theme.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\tinymce.min.js" />
+    <Content Include="Dashboard\vendors\tinymce\LICENSE.TXT" />
+    <Content Include="Dashboard\vendors\wizard\jquery.bootstrap.wizard.min.js" />
+    <Content Include="Dashboard\vendors\wysiwyg\bootstrap-wysihtml5.css" />
+    <Content Include="Dashboard\vendors\wysiwyg\bootstrap-wysihtml5.js" />
+    <Content Include="Dashboard\vendors\wysiwyg\wysihtml5-0.3.0.js" />
+    <Content Include="Default.aspx" />
+    <Content Include="EventdisplayToUser.aspx" />
+    <Content Include="EventOP\AddEvent.aspx" />
+    <Content Include="EventOP\EditEvent.aspx" />
+    <Content Include="Events.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Dashboard\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Dashboard\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Dashboard\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\.gitignore" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\.settings\.gitignore" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\component.json" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\Gemfile" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\Gemfile.lock" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\LICENCE" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\Rakefile" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\readme.textile" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\test\lib" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\test\README" />
+    <Content Include="Dashboard\vendors\bootstrap-wysihtml5\VERSION" />
+    <Content Include="Dashboard\vendors\ckeditor\CHANGES.md" />
+    <Content Include="Dashboard\vendors\ckeditor\LICENSE.md" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\scayt\LICENSE.md" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\scayt\README.md" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\wsc\LICENSE.md" />
+    <Content Include="Dashboard\vendors\ckeditor\plugins\wsc\README.md" />
+    <Content Include="Dashboard\vendors\ckeditor\README.md" />
+    <Content Include="Dashboard\vendors\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\outputforflash.fla" />
+    <Content Include="Dashboard\vendors\ckeditor\skins\moono\readme.md" />
+    <Content Include="Dashboard\vendors\datatables\images\Sorting icons.psd" />
+    <Content Include="Dashboard\vendors\flot\.gitignore" />
+    <Content Include="Dashboard\vendors\flot\.travis.yml" />
+    <Content Include="Dashboard\vendors\flot\API.md" />
+    <Content Include="Dashboard\vendors\flot\component.json" />
+    <Content Include="Dashboard\vendors\flot\CONTRIBUTING.md" />
+    <Content Include="Dashboard\vendors\flot\examples\ajax\data-eu-gdp-growth-1.json" />
+    <Content Include="Dashboard\vendors\flot\examples\ajax\data-eu-gdp-growth-2.json" />
+    <Content Include="Dashboard\vendors\flot\examples\ajax\data-eu-gdp-growth-3.json" />
+    <Content Include="Dashboard\vendors\flot\examples\ajax\data-eu-gdp-growth-4.json" />
+    <Content Include="Dashboard\vendors\flot\examples\ajax\data-eu-gdp-growth-5.json" />
+    <Content Include="Dashboard\vendors\flot\examples\ajax\data-eu-gdp-growth.json" />
+    <Content Include="Dashboard\vendors\flot\examples\ajax\data-japan-gdp-growth.json" />
+    <Content Include="Dashboard\vendors\flot\examples\ajax\data-usa-gdp-growth.json" />
+    <Content Include="Dashboard\vendors\flot\examples\axes-time-zones\tz\africa" />
+    <Content Include="Dashboard\vendors\flot\examples\axes-time-zones\tz\antarctica" />
+    <Content Include="Dashboard\vendors\flot\examples\axes-time-zones\tz\asia" />
+    <Content Include="Dashboard\vendors\flot\examples\axes-time-zones\tz\australasia" />
+    <Content Include="Dashboard\vendors\flot\examples\axes-time-zones\tz\backward" />
+    <Content Include="Dashboard\vendors\flot\examples\axes-time-zones\tz\etcetera" />
+    <Content Include="Dashboard\vendors\flot\examples\axes-time-zones\tz\europe" />
+    <Content Include="Dashboard\vendors\flot\examples\axes-time-zones\tz\factory" />
+    <Content Include="Dashboard\vendors\flot\examples\axes-time-zones\tz\iso3166.tab" />
+    <Content Include="Dashboard\vendors\flot\examples\axes-time-zones\tz\leapseconds" />
+    <Content Include="Dashboard\vendors\flot\examples\axes-time-zones\tz\northamerica" />
+    <Content Include="Dashboard\vendors\flot\examples\axes-time-zones\tz\pacificnew" />
+    <Content Include="Dashboard\vendors\flot\examples\axes-time-zones\tz\solar87" />
+    <Content Include="Dashboard\vendors\flot\examples\axes-time-zones\tz\solar88" />
+    <Content Include="Dashboard\vendors\flot\examples\axes-time-zones\tz\solar89" />
+    <Content Include="Dashboard\vendors\flot\examples\axes-time-zones\tz\southamerica" />
+    <Content Include="Dashboard\vendors\flot\examples\axes-time-zones\tz\systemv" />
+    <Content Include="Dashboard\vendors\flot\examples\axes-time-zones\tz\yearistype.sh" />
+    <Content Include="Dashboard\vendors\flot\examples\axes-time-zones\tz\zone.tab" />
+    <Content Include="Dashboard\vendors\flot\FAQ.md" />
+    <Content Include="Dashboard\vendors\flot\flot.jquery.json" />
+    <Content Include="Dashboard\vendors\flot\Makefile" />
+    <Content Include="Dashboard\vendors\flot\NEWS.md" />
+    <Content Include="Dashboard\vendors\flot\package.json" />
+    <Content Include="Dashboard\vendors\flot\PLUGINS.md" />
+    <Content Include="Dashboard\vendors\flot\README.md" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\langs\readme.md" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\skins\lightgray\fonts\icomoon-small.eot" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\skins\lightgray\fonts\icomoon-small.ttf" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\skins\lightgray\fonts\icomoon-small.woff" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\skins\lightgray\fonts\icomoon.eot" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\skins\lightgray\fonts\icomoon.ttf" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\skins\lightgray\fonts\icomoon.woff" />
+    <Content Include="Dashboard\vendors\tinymce\js\tinymce\skins\lightgray\fonts\readme.md" />
+    <Content Include="Dashboard\Web.config" />
+    <Content Include="Account\webfonts\fa-brands-400.eot" />
+    <Content Include="Account\webfonts\fa-brands-400.ttf" />
+    <Content Include="Account\webfonts\fa-brands-400.woff" />
+    <Content Include="Account\webfonts\fa-brands-400.woff2" />
+    <Content Include="Account\webfonts\fa-brands-400d41d.eot" />
+    <Content Include="Account\webfonts\fa-regular-400.eot" />
+    <Content Include="Account\webfonts\fa-regular-400.ttf" />
+    <Content Include="Account\webfonts\fa-regular-400.woff" />
+    <Content Include="Account\webfonts\fa-regular-400.woff2" />
+    <Content Include="Account\webfonts\fa-regular-400d41d.eot" />
+    <Content Include="Account\webfonts\fa-solid-900.eot" />
+    <Content Include="Account\webfonts\fa-solid-900.ttf" />
+    <Content Include="Account\webfonts\fa-solid-900.woff" />
+    <Content Include="Account\webfonts\fa-solid-900.woff2" />
+    <Content Include="Account\webfonts\fa-solid-900d41d.eot" />
+    <Content Include="Practise for JS ,JSON AND AJAX\JavaScript.js" />
+    <Content Include="TestOFAlzeroAJAX\Index.html" />
+    <Content Include="TestOFAlzeroAJAX\sewar.txt" />
+    <Content Include="ToTestWCF.aspx" />
+    <Content Include="WebService1.asmx" />
+    <None Include="Connected Services\FirstWcfServiceReference1\FirstWCFService.wsdl" />
+    <None Include="Connected Services\FirstWcfServiceReference1\FirstWCFService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\FirstWcfServiceReference1\FirstWCFService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Properties\DataSources\Services.Common.Dto.UserDto.datasource" />
+    <None Include="Connected Services\ServiceReference1\FirstWCFService.wsdl" />
+    <None Include="Connected Services\ServiceReference1\FirstWCFService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference1\FirstWCFService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference1\FirstWCFService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference2\FirstWCFService.wsdl" />
+    <None Include="Connected Services\ServiceReference2\FirstWCFService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference2\FirstWCFService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference2\FirstWCFService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Practise for JS ,JSON AND AJAX\Cres1.json" />
+    <Content Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ServiceReference3\WebService1.wsdl" />
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Account\LoginU.ascx" />
+    <Content Include="Practise for JS ,JSON AND AJAX\Index.html" />
+    <Content Include="Practise for JS ,JSON AND AJAX\script.js" />
+    <Content Include="StaticFiles\jquery-3.6.3.slim.min.js" />
+    <Content Include="StaticFiles\test.html" />
+    <Content Include="Styles to Login and register\JavaScript.js" />
+    <Content Include="Styles to Login and register\StyleSheet1.css" />
+    <Content Include="Providerdisplay.aspx" />
+    <Content Include="ProviderOP\AddProvider.aspx" />
+    <Content Include="ProviderOP\EditProvider.aspx" />
+    <Content Include="RoleDisplay.aspx" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Site.Master" />
+    <Content Include="Styles to Login and register\HtmlPage1.html" />
+    <Content Include="StaticFiles\css\bootstrap.css" />
+    <Content Include="StaticFiles\css\fancySelect.css" />
+    <Content Include="StaticFiles\css\flexslider.css" />
+    <Content Include="StaticFiles\css\font-awesome.css" />
+    <Content Include="StaticFiles\css\fonts\flexslider-icon-2.html" />
+    <Content Include="StaticFiles\css\fonts\flexslider-icon-3.html" />
+    <Content Include="StaticFiles\css\fonts\flexslider-icon-4.html" />
+    <Content Include="StaticFiles\css\fonts\flexslider-icon.html" />
+    <Content Include="StaticFiles\css\fonts\flexslider-icond41d.html" />
+    <Content Include="StaticFiles\css\fonts\fontawesome-webfontba72.svg" />
+    <Content Include="StaticFiles\css\owl.carousel.css" />
+    <Content Include="StaticFiles\css\responsive.css" />
+    <Content Include="StaticFiles\css\style.css" />
+    <Content Include="StaticFiles\images\bg.png" />
+    <Content Include="StaticFiles\images\demo\bg-slide-01.jpg" />
+    <Content Include="StaticFiles\images\demo\bg-slide-02.jpg" />
+    <Content Include="StaticFiles\images\demo\blog1.jpg" />
+    <Content Include="StaticFiles\images\demo\blog2.jpg" />
+    <Content Include="StaticFiles\images\demo\blog3.jpg" />
+    <Content Include="StaticFiles\images\facebook.png" />
+    <Content Include="StaticFiles\images\google-plus.png" />
+    <Content Include="StaticFiles\images\img13.jpg" />
+    <Content Include="StaticFiles\images\img14.jpg" />
+    <Content Include="StaticFiles\images\img15.jpg" />
+    <Content Include="StaticFiles\images\img16.jpg" />
+    <Content Include="StaticFiles\images\img17.jpg" />
+    <Content Include="StaticFiles\images\img18.jpg" />
+    <Content Include="StaticFiles\images\img19.jpg" />
+    <Content Include="StaticFiles\images\img20.jpg" />
+    <Content Include="StaticFiles\images\img21.jpg" />
+    <Content Include="StaticFiles\images\img22.jpg" />
+    <Content Include="StaticFiles\images\img23.jpg" />
+    <Content Include="StaticFiles\images\img24.jpg" />
+    <Content Include="StaticFiles\images\img25.jpg" />
+    <Content Include="StaticFiles\images\linkedin.png" />
+    <Content Include="StaticFiles\images\loading.gif" />
+    <Content Include="StaticFiles\images\parallax.jpg" />
+    <Content Include="StaticFiles\images\pointer.png" />
+    <Content Include="StaticFiles\images\pointer1.png" />
+    <Content Include="StaticFiles\images\shadow.png" />
+    <Content Include="StaticFiles\images\team1.jpg" />
+    <Content Include="StaticFiles\images\team2.jpg" />
+    <Content Include="StaticFiles\images\team3.jpg" />
+    <Content Include="StaticFiles\images\team4.jpg" />
+    <Content Include="StaticFiles\images\testimonial.jpg" />
+    <Content Include="StaticFiles\images\testimonial2.jpg" />
+    <Content Include="StaticFiles\images\testimonial3.jpg" />
+    <Content Include="StaticFiles\images\twitter.png" />
+    <Content Include="StaticFiles\images\ul.png" />
+    <Content Include="StaticFiles\images\wordpress.png" />
+    <Content Include="StaticFiles\js\bootstrap.min.js" />
+    <Content Include="StaticFiles\js\fancySelect.js" />
+    <Content Include="StaticFiles\js\gmap3.js" />
+    <Content Include="StaticFiles\js\jquery-2.1.0.min.js" />
+    <Content Include="StaticFiles\js\jquery.accordion.js" />
+    <Content Include="StaticFiles\js\jquery.fitvids.js" />
+    <Content Include="StaticFiles\js\jquery.flexslider.js" />
+    <Content Include="StaticFiles\js\jquery.nav.js" />
+    <Content Include="StaticFiles\js\jquery.placeholder.js" />
+    <Content Include="StaticFiles\js\jquery.scrollTo.js" />
+    <Content Include="StaticFiles\js\main.js" />
+    <Content Include="StaticFiles\js\owl.carousel.min.js" />
+    <Content Include="SubscribeDisplay.aspx" />
+    <Content Include="SubscribeFolder\Comment.aspx" />
+    <Content Include="SubscribeFolder\Like.aspx" />
+    <Content Include="SubscribeFolder\StyleSheet1.css" />
+    <Content Include="SubscribeFolder\suscribe.aspx" />
+    <Content Include="UserDisplay.aspx" />
+    <Content Include="UserOP\AddUserCo.aspx" />
+    <Content Include="UserOP\AddUserProvider.aspx" />
+    <Content Include="UserOP\DeleteUser.aspx" />
+    <Content Include="UserOP\EditUser.aspx" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="Bundle.config" />
+    <Content Include="Site.Mobile.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\LoginUser.aspx.cs">
+      <DependentUpon>LoginUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\LoginUser.aspx.designer.cs">
+      <DependentUpon>LoginUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Connected Services\FirstWcfServiceReference1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceReference1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceReference2\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceReference3\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contactcostomer.aspx.cs">
+      <DependentUpon>Contactcostomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contactcostomer.aspx.designer.cs">
+      <DependentUpon>Contactcostomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EventdisplayToUser.aspx.cs">
+      <DependentUpon>EventdisplayToUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EventdisplayToUser.aspx.designer.cs">
+      <DependentUpon>EventdisplayToUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EventOP\AddEvent.aspx.cs">
+      <DependentUpon>AddEvent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EventOP\AddEvent.aspx.designer.cs">
+      <DependentUpon>AddEvent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EventOP\EditEvent.aspx.cs">
+      <DependentUpon>EditEvent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EventOP\EditEvent.aspx.designer.cs">
+      <DependentUpon>EditEvent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Events.aspx.cs">
+      <DependentUpon>Events.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Events.aspx.designer.cs">
+      <DependentUpon>Events.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Account\LoginU.ascx.cs">
+      <DependentUpon>LoginU.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\LoginU.ascx.designer.cs">
+      <DependentUpon>LoginU.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providerdisplay.aspx.cs">
+      <DependentUpon>Providerdisplay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Providerdisplay.aspx.designer.cs">
+      <DependentUpon>Providerdisplay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProviderOP\AddProvider.aspx.cs">
+      <DependentUpon>AddProvider.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProviderOP\AddProvider.aspx.designer.cs">
+      <DependentUpon>AddProvider.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProviderOP\EditProvider.aspx.cs">
+      <DependentUpon>EditProvider.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProviderOP\EditProvider.aspx.designer.cs">
+      <DependentUpon>EditProvider.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RoleDisplay.aspx.cs">
+      <DependentUpon>RoleDisplay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RoleDisplay.aspx.designer.cs">
+      <DependentUpon>RoleDisplay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SubscribeDisplay.aspx.cs">
+      <DependentUpon>SubscribeDisplay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SubscribeDisplay.aspx.designer.cs">
+      <DependentUpon>SubscribeDisplay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SubscribeFolder\Comment.aspx.cs">
+      <DependentUpon>Comment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SubscribeFolder\Comment.aspx.designer.cs">
+      <DependentUpon>Comment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SubscribeFolder\Like.aspx.cs">
+      <DependentUpon>Like.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SubscribeFolder\Like.aspx.designer.cs">
+      <DependentUpon>Like.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SubscribeFolder\suscribe.aspx.cs">
+      <DependentUpon>suscribe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SubscribeFolder\suscribe.aspx.designer.cs">
+      <DependentUpon>suscribe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ToTestWCF.aspx.cs">
+      <DependentUpon>ToTestWCF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ToTestWCF.aspx.designer.cs">
+      <DependentUpon>ToTestWCF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserDisplay.aspx.cs">
+      <DependentUpon>UserDisplay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserDisplay.aspx.designer.cs">
+      <DependentUpon>UserDisplay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserOP\AddUserCo.aspx.cs">
+      <DependentUpon>AddUserCo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserOP\AddUserCo.aspx.designer.cs">
+      <DependentUpon>AddUserCo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserOP\AddUserProvider.aspx.cs">
+      <DependentUpon>AddUserProvider.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserOP\AddUserProvider.aspx.designer.cs">
+      <DependentUpon>AddUserProvider.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserOP\DeleteUser.aspx.cs">
+      <DependentUpon>DeleteUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserOP\DeleteUser.aspx.designer.cs">
+      <DependentUpon>DeleteUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserOP\EditUser.aspx.cs">
+      <DependentUpon>EditUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserOP\EditUser.aspx.designer.cs">
+      <DependentUpon>EditUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebService1.asmx.cs">
+      <DependentUpon>WebService1.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="StaticFiles\css\fonts\fontawesome-webfontba72.eot" />
+    <Content Include="StaticFiles\css\fonts\fontawesome-webfontba72.ttf" />
+    <Content Include="StaticFiles\css\fonts\fontawesome-webfontba72.woff" />
+    <Content Include="StaticFiles\css\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="StaticFiles\css\fonts\VtksMoney2.ttf" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Service.Common\Service.Common.csproj">
+      <Project>{B21CB456-3466-4EFF-9BD1-E0DA6A9B7589}</Project>
+      <Name>Service.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\Services.csproj">
+      <Project>{15c9c21f-f84f-48bc-aab7-595e5fa0d39a}</Project>
+      <Name>Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\FirstWcfServiceReference1\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceReference2\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceReference3\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Report1.rdlc" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64720</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44324/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
